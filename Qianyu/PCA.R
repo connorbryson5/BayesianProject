@@ -15,14 +15,14 @@ library("corrplot")
 
 wineqt <- read_csv("WineQT.csv")
 head(wineqt)
-wineqt_scaled = scale(wineqt)
+wineqt_scaled <- scale(wineqt)
 
 # PCA
-wineqt_scaled = data.frame(wineqt_scaled)
+wineqt_scaled <- data.frame(wineqt_scaled)
 
 summary(wineqt_scaled)
 
-winepca = PCA(wineqt_scaled[1:1143,1:11], graph = TRUE)
+winepca <- PCA(wineqt_scaled[1:1143,1:11], graph = TRUE)
 
 eig_val <- get_eigenvalue(winepca)
 eig_val
@@ -48,7 +48,7 @@ fit <- lm(wineqt_scaled$quality ~ wineqt_scaled$fixed.acidity+wineqt_scaled$vola
 
 summary(fit)
 
-# Bayesien
+# Bayesian
 
 modelString <-"
 model {
@@ -129,7 +129,7 @@ plot(posterior, vars = "beta1")
 
 # Frequentist
 
-wineqt_PCA = read.csv("PC_new_data_wine.csv")
+wineqt_PCA <- read_csv("./Qianyu/PC_new_data_wine.csv")
 
 fit <- lm(wineqt_scaled$quality ~ wineqt_PCA$PC1+wineqt_PCA$PC2+wineqt_PCA$PC3
           +wineqt_PCA$PC4+wineqt_PCA$PC5+wineqt_PCA$PC6+wineqt_PCA$PC7)

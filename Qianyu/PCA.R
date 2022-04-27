@@ -13,8 +13,7 @@ library("FactoMineR")
 library("factoextra")
 library("corrplot")
 
-setwd('/Users/Qianyu_Zhao1/Desktop/Baylor Courses/STAT 4360/project/')
-wineqt = read.csv("WineQT.csv")
+wineqt <- read_csv("WineQT.csv")
 head(wineqt)
 wineqt_scaled = scale(wineqt)
 
